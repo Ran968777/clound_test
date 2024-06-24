@@ -21,6 +21,7 @@ export default defineConfig({
       input: {
         index: path.resolve(__dirname, '/index.html'),
         fx: path.resolve(__dirname, '/fx.html'),
+        demo1: path.resolve(__dirname, '/demo1.html'),
       }
     }
   }
