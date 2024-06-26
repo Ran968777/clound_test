@@ -131,7 +131,7 @@ const getImgUrl = (val) => {
       img = '/fx/方形-加棉0000.png'
       break
     case 'Oxford cloth':
-      img = '/fx/'
+      img = '/fx/牛津布.png'
       break
     case 'Stainless steel':
       img = '/fx/方形不锈钢.png'
