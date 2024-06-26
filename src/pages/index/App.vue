@@ -236,7 +236,7 @@ const getImgUrl = (val) => {
   z-index: 2;
   position: absolute;
   left: 50px;
-  bottom: 100px;
+  bottom: 0;
 
 }
 
@@ -244,7 +244,7 @@ const getImgUrl = (val) => {
   z-index: 1;
   position: absolute;
   object-fit: cover;
-  width: 440px;
+  width: 450px;
   height: auto;
 }
 
