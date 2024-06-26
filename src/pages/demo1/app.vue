@@ -39,6 +39,7 @@ const changeImg = (type) => {
     <el-image class="main_img" src="/方形-加棉0000.png"></el-image>
     <el-image class="right_down" src="/5L黑色渲染图0000.png"></el-image>
   </div>
+  <el-image src="/images/img.png"></el-image>
 </template>
 
 <style scoped>
