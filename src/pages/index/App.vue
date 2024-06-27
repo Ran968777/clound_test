@@ -111,6 +111,7 @@ const switchChange = (newVal, label, imgPost) => {
 
 }
 
+const leftDownImg = ref()
 const radioChange = (newVal, label, imgPost) => {
   if (imgPost === 'left') {
     // 修改main_img
@@ -119,6 +120,11 @@ const radioChange = (newVal, label, imgPost) => {
     showImg.right = getImgUrl(newVal)
   } else if (imgPost === 'left_down') {
     showImg.leftDown = getImgUrl(newVal)
+    if (newVal === 'Chair with backrest') {
+      leftDownImg.value.$el.style = 'left:92px'
+    } else {
+      leftDownImg.value.$el.style = 'left:135px'
+    }
   } else if (imgPost === 'right_down') {
     showImg.rightDown = getImgUrl(newVal)
   }
@@ -161,10 +167,10 @@ const getImgUrl = (val) => {
       img = '/fx/椅子Bl0000.png'
       break
     case 'Backless chair':
-      img = '/fx/无靠背椅子.png'
+      img = '/fx/无靠背座椅.png'
       break
     case 'Bamboo chairs':
-      img = '/fx/竹椅.png'
+      img = '/fx/竹椅子.png'
       break
   }
   return '/images' + img
@@ -207,7 +213,7 @@ const getImgUrl = (val) => {
     </el-scrollbar>
     <div class="img_div">
       <div class="container">
-        <el-image class="left_down" v-show="showImg.leftDown" :src="showImg.leftDown"></el-image>
+        <el-image class="left_down" ref="leftDownImg" v-show="showImg.leftDown" :src="showImg.leftDown"></el-image>
         <el-image class="main_img" v-show="showImg.main" :src="showImg.main"></el-image>
         <el-image class="right_down" v-show="showImg.rightDown" :src="showImg.rightDown"></el-image>
       </div>
@@ -227,7 +233,7 @@ const getImgUrl = (val) => {
 }
 
 .container {
-  width: 760px;
+  width: 800px;
   height: 1080px;
   position: relative;
 }
@@ -235,8 +241,8 @@ const getImgUrl = (val) => {
 .left_down {
   z-index: 2;
   position: absolute;
-  //left: 20px;
-  margin-left: 92px;
+  left: 92px;
+  //margin-left: 92px;
   bottom: 119px;
 
 }
@@ -245,8 +251,9 @@ const getImgUrl = (val) => {
   z-index: 1;
   position: absolute;
   object-fit: cover;
-  width: 450px;
+  //width: 450px;
   height: auto;
+  width: auto;
   left: 242px;
   top: 168px;
 }
@@ -256,12 +263,14 @@ const getImgUrl = (val) => {
   position: absolute;
   left: 632px;
   bottom: 134px;
+  width: auto;
+  height: auto;
 }
 
 .container_right {
   //margin-left: 237px;
   //width: auto;
-  width: 760px;
+  //width: 40%;
 }
 
 .right {
