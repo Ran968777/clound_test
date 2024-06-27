@@ -211,7 +211,7 @@ const getImgUrl = (val) => {
         <el-image class="main_img" v-show="showImg.main" :src="showImg.main"></el-image>
         <el-image class="right_down" v-show="showImg.rightDown" :src="showImg.rightDown"></el-image>
       </div>
-      <div>
+      <div class="container_right">
         <el-image class="right" v-show="showImg.right" :src="showImg.right"></el-image>
       </div>
     </div>
@@ -222,21 +222,22 @@ const getImgUrl = (val) => {
 <style scoped>
 
 .img_div {
-  margin-left: 50px;
   display: flex;
-
+  width: auto;
 }
 
 .container {
-  width: 500px;
+  width: 760px;
+  height: 1080px;
   position: relative;
 }
 
 .left_down {
   z-index: 2;
   position: absolute;
-  left: 50px;
-  bottom: 0;
+  //left: 20px;
+  margin-left: 92px;
+  bottom: 119px;
 
 }
 
@@ -246,17 +247,26 @@ const getImgUrl = (val) => {
   object-fit: cover;
   width: 450px;
   height: auto;
+  left: 242px;
+  top: 168px;
 }
 
 .right_down {
   z-index: 2;
   position: absolute;
-  right: 50px;
-  bottom: 100px;
+  left: 632px;
+  bottom: 134px;
+}
+
+.container_right {
+  //margin-left: 237px;
+  //width: auto;
+  width: 760px;
 }
 
 .right {
-  margin-left: 30px;
+  margin-top: 168px;
+  margin-left: 81px;
   object-fit: cover;
   width: 440px;
   height: auto;
@@ -269,7 +279,6 @@ const getImgUrl = (val) => {
 .left {
   width: 400px;
   margin-right: 10px;
-  height: 500px;
 }
 
 .btn_list {
