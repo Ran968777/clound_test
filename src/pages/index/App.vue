@@ -90,15 +90,13 @@ const typeChange = () => {
 }
 
 const modelChange = (val) => {
-  if (val === 'Square suna room') {
-    if (!showImg.main) {
-      // showImg.main = '/images/fx/方形-加棉0000.png'
-      // showImg.right = '/images/fx/方形不锈钢.png'
-      form['Fabric'] = '3layer with insulation quilted cloth'
-      form['Support rod connectors'] = 'Stainless steel'
-      radioChange('3layer with insulation quilted cloth', 'Fabric', 'left')
-      radioChange('Stainless steel', 'Support rod connectors', 'right')
-    }
+  if (val === 'Square suna room' || val === 'Diamond suna room') {
+    // showImg.main = '/images/fx/加棉.png'
+    // showImg.right = '/images/fx/不锈钢.png'
+    form['Fabric'] = '3layer with insulation quilted cloth'
+    form['Support rod connectors'] = 'Stainless steel'
+    radioChange('3layer with insulation quilted cloth', 'Fabric', 'left')
+    radioChange('Stainless steel', 'Support rod connectors', 'right')
   }
 }
 
@@ -131,22 +129,31 @@ const radioChange = (newVal, label, imgPost) => {
 }
 
 const getImgUrl = (val) => {
+
+  function getDir() {
+    if (form.model === 'Square suna room') {
+      return '/fx'
+    } else if (form.model === 'Diamond suna room') {
+      return '/diamond'
+    }
+  }
+
   let img = ''
   switch (val) {
     case '3layer with insulation quilted cloth':
-      img = '/fx/方形-加棉0000.png'
+      img = getDir() + '/加棉.png'
       break
     case 'Oxford cloth':
-      img = '/fx/牛津布.png'
+      img = getDir() + '/牛津布.png'
       break
     case 'Stainless steel':
-      img = '/fx/方形不锈钢.png'
+      img = getDir() + '/不锈钢.png'
       break
     case 'White PVC':
-      img = '/fx/方形白色PVC.png'
+      img = getDir() + '/白色PVC.png'
       break
     case 'Black PVC':
-      img = '/fx/方形黑色PVC.png'
+      img = getDir() + '/黑色PVC.png'
       break
     case 'SS-2.6L 1000W':
       img = '/fx/SS-2.6-1000W.png'
